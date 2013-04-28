@@ -23,3 +23,12 @@ body
 {
     margin-bottom: 14px;
 }
+
+#question
+{
+  background-color:white;
+    text-align:center;
+    font-style:italic;
+    font-size:150%;
+    
+}

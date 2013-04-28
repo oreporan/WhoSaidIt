@@ -7,7 +7,7 @@
     <ProjectName>Who said it</ProjectName>
     <IsRunnable>true</IsRunnable>
     <TemplateAppName>Cordova240</TemplateAppName>
-    <AndroidPermissions>android.permission.CAMERA;android.permission.VIBRATE;android.permission.ACCESS_COARSE_LOCATION;android.permission.ACCESS_FINE_LOCATION;android.permission.ACCESS_LOCATION_EXTRA_COMMANDS;android.permission.READ_PHONE_STATE;android.permission.INTERNET;android.permission.RECEIVE_SMS;android.permission.RECORD_AUDIO;android.permission.MODIFY_AUDIO_SETTINGS;android.permission.READ_CONTACTS;android.permission.WRITE_CONTACTS;android.permission.WRITE_EXTERNAL_STORAGE;android.permission.ACCESS_NETWORK_STATE;android.permission.ACCOUNT_MANAGER;android.permission.GET_ACCOUNTS;android.permission.MANAGE_ACCOUNTS;android.permission.BROADCAST_STICKY</AndroidPermissions>
+    <AndroidPermissions>android.permission.CAMERA;android.permission.VIBRATE;android.permission.ACCESS_COARSE_LOCATION;android.permission.ACCESS_FINE_LOCATION;android.permission.ACCESS_LOCATION_EXTRA_COMMANDS;android.permission.READ_PHONE_STATE;android.permission.INTERNET;android.permission.RECEIVE_SMS;android.permission.RECORD_AUDIO;android.permission.MODIFY_AUDIO_SETTINGS;android.permission.READ_CONTACTS;android.permission.WRITE_CONTACTS;android.permission.WRITE_EXTERNAL_STORAGE;android.permission.ACCESS_NETWORK_STATE;android.permission.ACCOUNT_MANAGER;android.permission.GET_ACCOUNTS;android.permission.MANAGE_ACCOUNTS;android.permission.BROADCAST_STICKY;android.permission.GET_TASKS;android.permission.WAKE_LOCK</AndroidPermissions>
     <DeviceOrientations>Portrait;Landscape</DeviceOrientations>
     <iOSStatusBarStyle>Default</iOSStatusBarStyle>
     <AndroidHardwareAcceleration>false</AndroidHardwareAcceleration>
@@ -57,6 +57,7 @@
     <Resource Include="App_Resources\Android\drawable-nodpi\splashscreen.9.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\logo.png" />
     <Content Include="images\philo.jpg" />
     <Content Include="images\sports.jpg" />
     <Content Include="images\history.jpg" />
@@ -72,7 +73,7 @@
     <Content Include="jquery-mobile\jquery-1.8.2.min.js" />
     <Content Include="jquery-mobile\jquery.mobile-1.2.0.min.css" />
     <Content Include="jquery-mobile\jquery.mobile-1.2.0.min.js" />
-    <Content Include="js\hello-world.js" />
+    <Content Include="js\main.js" />
     <Content Include="styles\main.css" />
     <Content Include="cordova.ios.js">
       <Platform>iOS</Platform>
@@ -82,6 +83,27 @@
       <Platform>Android</Platform>
       <TargetName>cordova.js</TargetName>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <CordovaPluginContent Include="com.phonegap.plugins.pushPlugin\PushNotification.js" />
+    <CordovaPluginContent Include="com.phonegap.plugins.sqlite\Android\SQLitePlugin.js">
+      <Platform>Android</Platform>
+      <TargetName>SQLitePlugin.js</TargetName>
+    </CordovaPluginContent>
+    <CordovaPluginContent Include="com.phonegap.plugins.sqlite\iOS\SQLitePlugin.js">
+      <Platform>iOS</Platform>
+      <TargetName>SQLitePlugin.js</TargetName>
+    </CordovaPluginContent>
+  </ItemGroup>
+  <ItemGroup>
+    <CordovaPlugin Include="com.phonegap.plugins.pushPlugin">
+      <Version>1.1.1</Version>
+      <Name>PushPlugin</Name>
+    </CordovaPlugin>
+    <CordovaPlugin Include="com.phonegap.plugins.sqlite">
+      <Version>0.0.2</Version>
+      <Name>SQLite</Name>
+    </CordovaPlugin>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Telerik\ICE\Tools\Mobile\MobileTools.targets" />
 </Project>
