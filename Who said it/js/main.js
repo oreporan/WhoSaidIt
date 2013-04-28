@@ -2,6 +2,8 @@
 // Wait for PhoneGap to load
 document.addEventListener("deviceready", onDeviceReady, false);
 var correctAnswer;
+var categoryChosen;
+var points =0;
 
 // PhoneGap is ready
 function onDeviceReady() {
@@ -16,29 +18,58 @@ function onDeviceReady() {
         
         if(user==correct){
                  $('#'+userAnswer).css("background-Color","green");
+         
+            
+            //Update points
+            points++;
+            
+            //Show scoreboard
+             score(); 
+    
+            //Ask next Question
+              category(categoryChosen);
+
+            
         }
         else{
                 $('#'+userAnswer).css("background-Color","red");
+              category(categoryChosen);
         }
         
         
         }
 
-/*Function that Changes backgrounds per Category picked */
+
+/*Function to Show the current score */
+function score(){
+    $("#score").html("Score: "+points); 
+}
+
+
+/* Main Function that splits by categories */
 function category(category){
     var movies = 0;
     var sports = 1;
     var history = 2;
     var philosophy = 3;
-    var general = 4;
+    var random = 4;
     var music = 5;
+    
+    //Category chosen
+    categoryChosen = category;
   
-   
+    //Display Score
+    score();
+    
+      //TODO: Reset Button Background Colors 
+ 
     //To change Background color
     switch(category){
+          
         case 0:
-            $("#singleGameContent").css({'background-image':'url(images/movies.jpg)','background-size':'100%'});
+            $("#singleGameContent").css({'background-image':'url(images/movies.jpg)','background-size':'100%'});           
           correctAnswer = askQuestionMovies();
+           
             break;
             
               case 1:
@@ -58,7 +89,7 @@ function category(category){
             
               case 4:
          $("#singleGameContent").css("background-Color","white");
-           correctAnswer =  askQuestionGeneral();
+           correctAnswer =  askQuestionRandom();
             break;
             
               case 5:
@@ -71,6 +102,7 @@ function category(category){
     
     
     }
+}
      
       /*Asking a Movie Question */
     function askQuestionMovies(){
@@ -159,15 +191,17 @@ function category(category){
     function askQuestionPhilo(){
     var quote = "\"I think, therefor I am\"";
         //Answers
-    var one="Arnold Shwarznegger";
-    var two="Sylvester Stalone";
-     var three="Bruce Willis";
+    var one="Socrates";
+    var two="Aplaton";
+     var three="Decartes";
      var four="Tom Hanks";
         $("#question").val(quote); 
          $("#answerOne").val(one); 
          $("#answerTwo").val(two); 
          $("#answerThree").val(three); 
          $("#answerFour").val(four); 
+    
+    return three;
     }
     
  
