@@ -1,12 +1,28 @@
 // JavaScript Document
 // Wait for PhoneGap to load
 document.addEventListener("deviceready", onDeviceReady, false);
+var correctAnswer;
 
 // PhoneGap is ready
 function onDeviceReady() {
     getLocation();
     navigator.splashscreen.hide();
 }
+
+    /*For each question - Which button did he answer? */
+    function isCorrect(userAnswer){
+       var correct =  correctAnswer; 
+       var user = document.getElementById(userAnswer).value;
+        
+        if(user==correct){
+                 $('#'+userAnswer).css("background-Color","green");
+        }
+        else{
+                $('#'+userAnswer).css("background-Color","red");
+        }
+        
+        
+        }
 
 /*Function that Changes backgrounds per Category picked */
 function category(category){
@@ -16,39 +32,38 @@ function category(category){
     var philosophy = 3;
     var general = 4;
     var music = 5;
-    
-    
+  
    
     //To change Background color
     switch(category){
         case 0:
             $("#singleGameContent").css({'background-image':'url(images/movies.jpg)','background-size':'100%'});
-            askQuestionMovies();
+          correctAnswer = askQuestionMovies();
             break;
             
               case 1:
                 $("#singleGameContent").css('background-image', 'url(images/sports.jpg)');
-              askQuestionSports();
+               correctAnswer =askQuestionSports();
             break;
             
               case 2:
             $("#singleGameContent").css('background-image', 'url(images/history.jpg)');
-         askQuestionHistory();
+           correctAnswer =  askQuestionHistory();
             break;
             
               case 3:
                  $("#singleGameContent").css('background-image', 'url(images/philo.jpg)');
-       askQuestionPhilo();
+        correctAnswer =   askQuestionPhilo();
             break;
             
               case 4:
-         $("#singleGameContent").css("backgroundColor","white");
-               askQuestionGeneral();
+         $("#singleGameContent").css("background-Color","white");
+           correctAnswer =  askQuestionGeneral();
             break;
             
               case 5:
             $("#singleGameContent").css('background-image', 'url(images/music.jpg)');
-             askQuestionMusic();
+           correctAnswer = askQuestionMusic();
             break;
             
             
@@ -68,73 +83,77 @@ function category(category){
      var three="Bruce Willis";
      var four="Tom Hanks";
         
-        //TODO: Make answers random on buttons
-        var answers =[one,two,three,four]; 
-        var randomAnswer = answers[Math.floor(Math.random() * answers.length)];
-           answers.splice( $.inArray(randomAnswer, answers), 1 );
-        //Finish making random
         
+         $("#answerOne").val(one); 
+         $("#answerTwo").val(two); 
+         $("#answerThree").val(three); 
+         $("#answerFour").val(four); 
         
-         $("#answerOne").html(one); 
-         $("#answerTwo").html(two); 
-         $("#answerThree").html(three); 
-         $("#answerFour").html(four); 
+        return one;
     }
       /*Asking a General Question */
     function askQuestionGeneral(){
     var quote = "\"Asta Lavista Baby\"";
         //Answers
-          var one="Arnold Shwarznegger";
+     var one="Arnold Shwarznegger";
     var two="Sylvester Stalone";
      var three="Bruce Willis";
      var four="Tom Hanks";
         $("#question").val(quote); 
-            $("#answerOne").html(one); 
-         $("#answerTwo").html(two); 
-         $("#answerThree").html(three); 
-         $("#answerFour").html(four); 
+        $("#answerOne").val(one); 
+         $("#answerTwo").val(two); 
+         $("#answerThree").val(three); 
+         $("#answerFour").val(four); 
+        
+          return one;
     }
       /*Asking a Sports Question */
     function askQuestionSports(){
     var quote = "\"Baseball is 90% mental. The other half is physical\"";
         //Answers
-     var one="Arnold Shwarznegger";
+     var one="Babe Ruth";
     var two="Yogi Berra";
-     var three="Bruce Willis";
-     var four="Tom Hanks";
+     var three="Michael Jordan";
+     var four="Derek Jeter";
         $("#question").val(quote); 
-            $("#answerOne").html(one); 
-         $("#answerTwo").html(two); 
-         $("#answerThree").html(three); 
-         $("#answerFour").html(four); 
+         $("#answerOne").val(one); 
+         $("#answerTwo").val(two); 
+         $("#answerThree").val(three); 
+         $("#answerFour").val(four); 
+        
+          return two;
     }
       /*Asking a Music Question */
     function askQuestionMusic(){
     var quote = "\"Hit my baby one more time\"";
         //Answers
-     var one="Arnold Shwarznegger";
-    var two="Sylvester Stalone";
-     var three="Bruce Willis";
-     var four="Tom Hanks";
+     var one="Lady Gaga";
+    var two="Nsync";
+     var three="Britney Spears";
+     var four="Hanson";
         $("#question").val(quote); 
-            $("#answerOne").html(one); 
-         $("#answerTwo").html(two); 
-         $("#answerThree").html(three); 
-         $("#answerFour").html(four); 
+         $("#answerOne").val(one); 
+         $("#answerTwo").val(two); 
+         $("#answerThree").val(three); 
+         $("#answerFour").val(four); 
+        
+          return three;
     }
       /*Asking a History Question */
     function askQuestionHistory(){
     var quote = "\"I have a dream...\"";
         //Answers
-    var one="Arnold Shwarznegger";
-    var two="Sylvester Stalone";
-     var three="Bruce Willis";
-     var four="Tom Hanks";
+    var one="Martin Luther King Jr.";
+    var two="Margaret Tatcher";
+     var three="Dali Lama";
+     var four="Itzhak Rabin";
         $("#question").val(quote); 
-            $("#answerOne").html(one); 
-         $("#answerTwo").html(two); 
-         $("#answerThree").html(three); 
-         $("#answerFour").html(four); 
+         $("#answerOne").val(one); 
+         $("#answerTwo").val(two); 
+         $("#answerThree").val(three); 
+         $("#answerFour").val(four); 
+        
+        return one
     }
       /*Asking a Philo Question */
     function askQuestionPhilo(){
@@ -145,10 +164,10 @@ function category(category){
      var three="Bruce Willis";
      var four="Tom Hanks";
         $("#question").val(quote); 
-            $("#answerOne").html(one); 
-         $("#answerTwo").html(two); 
-         $("#answerThree").html(three); 
-         $("#answerFour").html(four); 
+         $("#answerOne").val(one); 
+         $("#answerTwo").val(two); 
+         $("#answerThree").val(three); 
+         $("#answerFour").val(four); 
     }
     
  

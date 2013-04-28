@@ -12,8 +12,7 @@
         <script src="js/main.js" type="text/javascript"></script>
     </head> 
     <body> 
-        
-        <div data-role="page" id="home">
+       <div data-role="page" id="home">
              <div data-role="header">
                 <center><img src="images/logo.png"></center>
             </div>
@@ -26,10 +25,11 @@
                <li><a href="#leaderBoards" data-role="button">LeaderBoards</a></li> 
                 <li><a href="#myScores" data-role="button">My Scores</a></li>
                 </ul>
+           </div>
              
-            </div>
+            
             <div data-role="footer" data-position="fixed" data-id="oneFooter">
-                <span class="footerText"><a href="#settings" data-role="button" data-icon="gear" data-iconpos="notext" data-theme="c" data-inline="true" id="settingsIcon">Settings</a></span>
+                <span class="footerText"><a href="#settings" data-role="button"  data-position-to="window" data-icon="gear" data-iconpos="notext" data-theme="c" data-inline="true" id="settingsIcon">Settings</a></span>
             </div>
         </div>
         
@@ -54,7 +54,7 @@
 </p>
     </div><!-- /content -->
             <div data-role="footer" data-position="fixed"  data-id="oneFooter">
-                <span class="footerText">Built with Icenium&trade;</span>
+               
             </div>
         </div>
         
@@ -69,13 +69,17 @@
                     	</div><!-- /header -->
           
                     <div data-role="content" id="singleGameContent">            
-                        <input type="text" name="text-basic" id="question" value="" style="background-color:white"><br>
+                        <input type="text" name="text-basic" id="question" value="" stysle="background-color:white"><br>
                         <div id="answers" >
+           
+                                <input type="button"  id="answerOne" value ="" onClick="isCorrect(this.id)">
+                                 <input type="button"  id="answerTwo" value="" onClick="isCorrect(this.id)">        
+                             <input type="button"   id="answerThree"  value="" onClick="isCorrect(this.id)">
+                                 <input type="button"   id="answerFour" value="" onClick="isCorrect(this.id)">
+                   
                               
-                             <button  id="answerOne"></button>
-                                 <button  id="answerTwo"></button>        
-                             <button   id="answerThree"></button>
-                                 <button   id="answerFour"></button>
+                             
+                             
                       
                         </div>
                       
@@ -83,6 +87,10 @@
                         <p id="time">
                             Time
                         </p>
+                        </div>
+                         <div data-role="footer" data-position="fixed" data-id="oneFooter">
+                <span class="footerText"><a href="#settings" data-role="button" data-icon="gear" data-iconpos="notext" data-theme="c" data-inline="true" id="settingsIcon">Settings</a></span>
+            
 
         </div>
              </div>
@@ -112,29 +120,18 @@
 		<p>Page content goes here.</p>
 	</div><!-- /content -->
 
-	<div data-role="footer">
-		<h4>Page Footer</h4>
-	</div><!-- /footer -->
+	 <div data-role="footer" data-position="fixed" data-id="oneFooter">
+                <span class="footerText"><a href="#settings" data-role="button" data-icon="gear" data-iconpos="notext" data-theme="c" data-inline="true" id="settingsIcon">Settings</a></span>
+            </div><!-- /footer -->
 </div><!-- /page -->
         
         
            <!-- Settings Page -->
-        <div data-role="page" id="settings">
-
-	<div data-role="header"> 
-    
-    
-		<h1>Page Title</h1>
-	</div><!-- /header -->
-
-	<div data-role="content">
-		<p>Page content goes here.</p>
-	</div><!-- /content -->
-
-	<div data-role="footer">
-		<h4>Page Footer</h4>
-	</div><!-- /footer -->
-</div><!-- /page -->
+        <div data-role="page" id="settingsPage">
+    	<div data-role="popup" id="settings" class="ui-content" data-overlay-theme="a">
+    <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+    <p>I have a close button at the top right corner with simple HTML markup.</p>
+            </div></div>
         
           
            <!-- LeaderBoards Page -->
