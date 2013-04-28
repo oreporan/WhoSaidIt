@@ -2,7 +2,6 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>Hello, World</title>
         <link href="jquery-mobile/jquery.mobile-1.2.0.min.css" rel="stylesheet" type="text/css" />
         <link href="styles/main.css" rel="stylesheet" type="text/css" />
 
@@ -15,66 +14,160 @@
     <body> 
         
         <div data-role="page" id="home">
-            <div data-role="header">
-                <h1>Hello, World!</h1>
+             <div data-role="header">
+               <h1>Who said it?!</h1>
             </div>
+            
+            <!-- Content -->
             <div data-role="content">
-                <h1>Welcome to Icenium!</h1>
-                <p>
-                    Icenium&trade; enables you to build cross-platform device applications regardless of your 
-                    development platform by combining the convenience of a local development toolset with the 
-                    power and flexibility of the cloud.
-                </p>
-            </div>
-            <div class="nav">
-                <ul data-role="listview">
-                    <li><a href="#page1" data-transition="slide">UI Interaction Example</a></li>
-                    <li><a href="#page2" data-transition="slide">Geolocation Example</a></li>
+                <ul id="mainMenu">
+               <li><a href="#singleIndex" data-role="button">Single Player</a></li>        
+               <li><a href="#singleIndex" data-role="button">Multi Player</a></li> 
+               <li><a href="#leaderBoards" data-role="button">LeaderBoards</a></li> 
+                <li><a href="#myScores" data-role="button">My Scores</a></li>
                 </ul>
+             
             </div>
             <div data-role="footer" data-position="fixed" data-id="oneFooter">
-                <span class="footerText">Built with Icenium&trade;</span>
+                <span class="footerText"><a href="#settings" data-role="button" data-icon="gear" data-iconpos="notext" data-theme="c" data-inline="true" id="settingsIcon">Settings</a></span>
             </div>
         </div>
         
         <!-- The following page demonstrates basic user interaction. -->
-        <div data-role="page" id="page1" data-add-back-btn="true">
+        <div data-role="page" id="singleIndex" data-add-back-btn="true">
             <div data-role="header">
-                <h1>Hello</h1>
+                <h1>PIck A Category</h1>
             </div>
             <div data-role="content">
-                <h1>Say Hello!</h1>
-                <div id='helloWorldInput'>
-                    <label for="txtName">Enter your name:</label>
-                    <input type="text" id="txtName" value="" />
-                </div>
-                <div id='helloWorldText' style="display:block;"></div>
-                <div align="center">
-                    <div data-role="controlgroup" style="display:inline-block;" data-type="horizontal">
-                        <button data-icon="delete" onClick="sayHelloReset();">Reset</button>
-                        <button data-theme="a" onClick="sayHello();">Submit</button>
-                    </div>
-                </div>
-            </div>
+            
+         <p>
+    <a href="#singleGame" data-role="button" data-inline="true" id="Movies" onClick="category(0)">Movies</a>
+    <a href="#singleGame" data-role="button" data-inline="true" id="Sports" onClick="category(1)">Sports</a>
+</p>
+                <p>
+    <a href="#singleGame" data-role="button" data-inline="true"  id="History" onClick="category(2)">History</a>
+    <a href="#singleGame" data-role="button" data-inline="true"  id="Philosophy" onClick="category(3)">Philosophy</a>
+</p>
+                      <p>
+    <a href="#singleGame" data-role="button" data-inline="true"  id="General" onClick="category(4)">General</a>
+    <a href="#singleGame" data-role="button" data-inline="true"  id="Music" onClick="category(5)">Music</a>
+</p>
+    </div><!-- /content -->
             <div data-role="footer" data-position="fixed"  data-id="oneFooter">
                 <span class="footerText">Built with Icenium&trade;</span>
             </div>
         </div>
         
-        <!-- The following page demonstrates how to access device sensors using Apache Callback (aka PhoneGap) -->
-        <div data-role="page" id="page2" data-add-back-btn="true">
-            <div data-role="header">
-                <h1>Geolocation Example</h1>
-            </div>
-            <div data-role="content">
-                <h1>My Location</h1>
-                <div id="myLocation">Unable to get location information. Please check your network connection and try again.</div>
-                <button data-icon="refresh" onClick="getLocation();">Refresh Location</button>
-                <div id="map_canvas"></div>
-            </div>
-            <div data-role="footer" data-position="fixed" data-id="oneFooter">
-                <span class="footerText">Built with Icenium&trade;</span>
-            </div>
+        <!-- Single Game Screen Page -->
+        <div data-role="page" id="singleGame">
+        
+                <div data-role="header">
+                    <p>
+                         Score
+                    </p>
+            
+                    	</div><!-- /header -->
+          
+                    <div data-role="content" id="singleGameContent">            
+                        <input type="text" name="text-basic" id="text-basic" value="asdfasd" disabled="disabled">
+                        <div id="answers" >
+                              
+                             <button  id="answer">Button</button>
+                                 <button  id="answer">Button</button>        
+                             <button   id="answer">Button</button>
+                                 <button   id="answer">Button</button>
+                      
+                        </div>
+                      
+                        <!-- Time -->
+                        <p id="time">
+                            Time
+                        </p>
+
         </div>
+             </div>
+     
+        
+        <!-- Single Game End Screen Page -->
+        <div data-role="page" id="singleGameEnd">
+
+	<div data-role="content">
+		
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+        
+        
+           <!-- Single Game View Quotes page -->
+        <div data-role="page" id="singleEndQuotes">
+
+	<div data-role="header">
+		<h1>Page Title</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<p>Page content goes here.</p>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+        
+        
+           <!-- Settings Page -->
+        <div data-role="page" id="settings">
+
+	<div data-role="header">
+		<h1>Page Title</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<p>Page content goes here.</p>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+        
+          
+           <!-- LeaderBoards Page -->
+        <div data-role="page" id="leaderBoards">
+
+	<div data-role="header">
+		<h1>Page Title</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<p>Page content goes here.</p>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+        
+                  
+           <!-- My Scores Page -->
+        <div data-role="page" id="myScores">
+
+	<div data-role="header">
+		<h1>Page Title</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<p>Page content goes here.</p>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+        
+        
     </body>
     </html>

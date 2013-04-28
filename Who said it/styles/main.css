@@ -6,7 +6,7 @@ body
 
 .ui-footer
 {
-    text-align: center;    
+    text-align: left;    
 }
 
 .err
@@ -17,4 +17,9 @@ body
 #map_canvas
 {
     text-align:center;
+}
+
+#settingsIcon
+{
+    margin-bottom: 14px;
 }

@@ -57,6 +57,12 @@
     <Resource Include="App_Resources\Android\drawable-nodpi\splashscreen.9.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\philo.jpg" />
+    <Content Include="images\sports.jpg" />
+    <Content Include="images\history.jpg" />
+    <Content Include="images\movies.jpg" />
+    <Content Include="images\music.jpg" />
+    <Content Include="images\science.jpg" />
     <Content Include="index.html" />
     <Content Include="jquery-mobile\images\ajax-loader.gif" />
     <Content Include="jquery-mobile\images\icons-18-black.png" />
