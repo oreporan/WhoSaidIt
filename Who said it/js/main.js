@@ -45,6 +45,47 @@ function score(){
     $("#score").html("Score: "+points); 
 }
 
+function background(num){
+ //To change Background color
+    switch(num){
+          
+        case 0:
+            $("#singleGameContent").css({'background-image':'url(images/movies.jpg)','background-size':'100%'});           
+              
+            break;
+            
+              case 1:
+                $("#singleGameContent").css('background-image', 'url(images/sports.jpg)');
+    
+            break;
+            
+              case 2:
+            $("#singleGameContent").css('background-image', 'url(images/history.jpg)');
+       
+            break;
+            
+              case 3:
+                 $("#singleGameContent").css('background-image', 'url(images/philo.jpg)');
+
+            break;
+            
+              case 4:
+         $("#singleGameContent").css("background-Color","white");
+        
+            break;
+            
+              case 5:
+            $("#singleGameContent").css('background-image', 'url(images/music.jpg)');
+         
+            break;
+            
+            
+    
+    
+    
+    }
+}
+
 
 /* Main Function that splits by categories */
 function category(category){
@@ -67,33 +108,33 @@ function category(category){
     switch(category){
           
         case 0:
-            $("#singleGameContent").css({'background-image':'url(images/movies.jpg)','background-size':'100%'});           
+                     
           correctAnswer = askQuestionMovies();
            
             break;
             
               case 1:
-                $("#singleGameContent").css('background-image', 'url(images/sports.jpg)');
+               
                correctAnswer =askQuestionSports();
             break;
             
               case 2:
-            $("#singleGameContent").css('background-image', 'url(images/history.jpg)');
+           
            correctAnswer =  askQuestionHistory();
             break;
             
               case 3:
-                 $("#singleGameContent").css('background-image', 'url(images/philo.jpg)');
+                
         correctAnswer =   askQuestionPhilo();
             break;
             
               case 4:
-         $("#singleGameContent").css("background-Color","white");
+         
            correctAnswer =  askQuestionRandom();
             break;
             
               case 5:
-            $("#singleGameContent").css('background-image', 'url(images/music.jpg)');
+          
            correctAnswer = askQuestionMusic();
             break;
             
