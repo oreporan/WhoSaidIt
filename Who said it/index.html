@@ -21,39 +21,33 @@
 
             <!-- Content -->
             <div id="logoBackground" data-role="content">
-             <img src="images/logo.png">
-             <a href="#home" id="toHome" data-transition="slide"></a>
+             <center><img src="images/logo.png"></center>
+             <a href="#home" id="toHome"></a>
            </div>
         </div>
 
 <!------------------------------------------- Main page -------------------------------------------->
        <div data-role="page" id="home" class="page">
-
-
+    	   <div data-role="header">
+            </div>
             <!-- Content -->
             <div data-role="content" id="homeContent">
-                <ul id="mainMenu">
-                    <li><a href="#singleIndex" data-role="button">Single Player</a></li>
-                    <li><a href="#multyIndex" data-role="button">Multi Player</a></li>
-                    <li><a href="#leaderBoards" data-role="button">LeaderBoards</a></li>
-                    <li><a href="#myScores" data-role="button">My Scores</a></li>
-                </ul>
-           </div>
-
-            <div data-role="footer" data-position="fixed" data-id="oneFooter">
-                <span class="footerText">
-                    <a href="#settings" data-role="button"  data-position-to="window" data-icon="gear" data-iconpos="notext" data-theme="c" data-inline="true" id="settingsIcon">Settings</a>
-                </span>
-            </div>
+                <table id="mainMenu">
+                    <tr><td><a href="#singleIndex" data-role="button">Single Player</a></td></tr>
+                    <tr><td><a href="#multyIndex" data-role="button">Multi Player</a></td></tr>
+                    <tr><td><a href="#leaderBoards" data-role="button">LeaderBoards</a></td></tr>
+					<tr><td><a href="#myScores" data-role="button">My Scores</a></td></tr>
+                </table>
+           </div>         
         </div>
 
 
 
 
-<!--------------------------------------- Choos category page. ------------------------------------------>
+<!--------------------------------------- Choose category page. ------------------------------------------>
         <div data-role="page" id="singleIndex" class="page" data-add-back-btn="true">
             <div data-role="header">
-                <h1>PIck A Category</h1>
+                <h1>Pick A Category</h1>
             </div>
             <div data-role="content" id="singleIndexContent">
 
@@ -131,9 +125,10 @@
                 </div>
 
                 <!-- Time -->
-                <p id="time"> Time </p>
-                <span id="timer" font-size="18pt" color="blue"; background="black"></span>
- 
+                <div id="time_div">
+                    
+                    <p id="timer" text-align="inline"> </p>
+                </div>
             </div>
 
             <div data-role="footer" data-position="fixed" data-id="oneFooter">

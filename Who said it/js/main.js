@@ -30,12 +30,29 @@ function isCorrect(userAnswer){
     //Ask next Question
     category(categoryChosen);
             
-}    
+}
 
+function timer() {
+    var seconds_left = 10;
+    var interval = setInterval(function() {
+        
+        document.getElementById('timer').innerHTML = --seconds_left;
+        
+        if(seconds_left <= 5) {
+            $('#timer').css('color', 'red');
+        }
+        
+        if(seconds_left <= 0) {
+            window.location.href = "#singleGameEnd";
+            clearInterval(interval);
+        }
+    }, 1000);
+}
 
 /*Function to Show the current score */
 function score(){
-         //Change score color to yellow
+    
+    //Change score color to yellow
     $('#score').css('color','yellow');
     $("#score").html("Score: " + points); 
 }
@@ -46,7 +63,7 @@ function background(num){
     switch(num){
           
         case 0:
-            $("#singleGameContent").css({'background-image':'url(images/movies.png)','background-size':'100%'});           
+            $("#singleGameContent").css({'background-image':'url(http://th05.deviantart.net/fs71/PRE/i/2011/177/1/0/tileable_wood_texture_02_by_ftourini-d3k1vk9.jpg)','background-size':'100%'});           
               
             break;
             
@@ -148,7 +165,9 @@ function askQuestionMovies(){
     $("#answerOne").val(one); 
     $("#answerTwo").val(two); 
     $("#answerThree").val(three); 
-    $("#answerFour").val(four); 
+    $("#answerFour").val(four);
+    
+    timer();
         
     return one;
 }
@@ -257,12 +276,9 @@ function askQuestionRandom(){
     //Redirects from Logo to main page
     function redirect(){
    window.location = $('a').attr('href');
-    $("#homeContent").css({'background-image':'url(images/logo.png)','background-repeat':'no-repeat'});
-    $("#singleIndexContent").css({'background-image':'url(images/logo.png)','background-repeat':'no-repeat'});
-
 }
 
-setTimeout(redirect, 2000);
+setTimeout(redirect, 3200);
     
 
 
