@@ -1,9 +1,11 @@
-// JavaScript Document
+/* JavaScript Document*/
+
 // Wait for PhoneGap to load
 document.addEventListener("deviceready", onDeviceReady, false);
+
 var correctAnswer;
 var categoryChosen;
-var points =0;
+var points = 0;
 
 // PhoneGap is ready
 function onDeviceReady() {
@@ -12,41 +14,36 @@ function onDeviceReady() {
 }
 
     /*For each question - Which button did he answer? */
-    function isCorrect(userAnswer){
-       var correct =  correctAnswer; 
-       var user = document.getElementById(userAnswer).value;
-        
-        if(user==correct){
-                 $('#'+userAnswer).css("background-Color","green");
-         
+function isCorrect(userAnswer){
+    var correct =  correctAnswer; 
+    var user = document.getElementById(userAnswer).value;
+    if(user == correct){
+        $('#'+userAnswer).css("background-Color","green");
+           
+        //Update points
+        points++;
             
-            //Update points
-            points++;
-            
-            //Show scoreboard
-             score(); 
-    
-            //Ask next Question
-              category(categoryChosen);
-
-            
-        }
-        else{
-                $('#'+userAnswer).css("background-Color","red");
-              category(categoryChosen);
-        }
+        //Ask next Question
+        category(categoryChosen);
         
-        
-        }
+    } else {
+        $('#'+userAnswer).css("background-Color","red");
+        category(categoryChosen);
+    }       
+            
+}    
 
 
 /*Function to Show the current score */
 function score(){
-    $("#score").html("Score: "+points); 
+         //Change score color to yellow
+    $('#score').css('color','yellow');
+    $("#score").html("Score: " + points); 
 }
 
+//To change Background color
 function background(num){
- //To change Background color
+ 
     switch(num){
           
         case 0:
@@ -54,36 +51,32 @@ function background(num){
               
             break;
             
-              case 1:
-                $("#singleGameContent").css('background-image', 'url(images/sports.jpg)');
+        case 1:
+            $("#singleGameContent").css('background-image', 'url(images/sports.jpg)');
     
             break;
             
-              case 2:
+        case 2:
             $("#singleGameContent").css('background-image', 'url(images/history.jpg)');
        
             break;
             
-              case 3:
-                 $("#singleGameContent").css('background-image', 'url(images/philo.jpg)');
+        case 3:
+            $("#singleGameContent").css('background-image', 'url(images/philo.jpg)');
 
             break;
             
-              case 4:
-         $("#singleGameContent").css("background-Color","white");
+        case 4:
+            $("#singleGameContent").css("background-Color","white");
         
             break;
             
-              case 5:
-            $("#singleGameContent").css('background-image', 'url(images/music.jpg)');
+        case 5:
+            $("#singleGameContent").css('background-image', 'url(http://idesigniphone.net/wallpapers/54468.png)');
          
             break;
-            
-            
-    
-    
-    
     }
+    
 }
 
 
@@ -105,146 +98,164 @@ function category(category){
       //TODO: Reset Button Background Colors 
  
     //To change Background color
-    switch(category){
+    switch(categoryChosen){
           
-        case 0:
-                     
-          correctAnswer = askQuestionMovies();
-           
+        case movies:
+            correctAnswer = askQuestionMovies();
+            
             break;
             
-              case 1:
-               
-               correctAnswer =askQuestionSports();
+        case sports:
+            correctAnswer =askQuestionSports();
+            
             break;
             
-              case 2:
-           
-           correctAnswer =  askQuestionHistory();
+        case history:
+            correctAnswer =  askQuestionHistory();
+            
             break;
             
-              case 3:
-                
-        correctAnswer =   askQuestionPhilo();
+        case philosophy:    
+            correctAnswer =   askQuestionPhilo();
+            
             break;
             
-              case 4:
-         
-           correctAnswer =  askQuestionRandom();
+        case random:
+            correctAnswer =  askQuestionRandom();
+            
             break;
             
-              case 5:
-          
-           correctAnswer = askQuestionMusic();
+        case music:
+            correctAnswer = askQuestionMusic();
+            
             break;
-            
-            
-    
-    
-    
     }
 }
      
-      /*Asking a Movie Question */
+    /*Asking a Movie Question */
     function askQuestionMovies(){
-    var quote = "\"Asta Lavista Baby\"";
-           $("#question").val(quote); 
-      
+    
+        //Question
+        var quote = "\"Asta Lavista Baby\"";
+       // $("#question").val(quote); 
+              $("#question").html(quote); 
+
         //Answers        
-    var one="Arnold Shwarznegger";
-    var two="Sylvester Stalone";
-     var three="Bruce Willis";
-     var four="Tom Hanks";
-        
-        
-         $("#answerOne").val(one); 
-         $("#answerTwo").val(two); 
-         $("#answerThree").val(three); 
-         $("#answerFour").val(four); 
+        var one="Arnold Shwarznegger";
+        var two="Sylvester Stalone";
+        var three="Bruce Willis";
+        var four="Tom Hanks";
+
+        $("#answerOne").val(one); 
+        $("#answerTwo").val(two); 
+        $("#answerThree").val(three); 
+        $("#answerFour").val(four); 
         
         return one;
     }
-      /*Asking a General Question */
-    function askQuestionGeneral(){
-    var quote = "\"Asta Lavista Baby\"";
+    
+    /*Asking a General Question */
+    function askQuestionRandom(){
+    
+        //Question
+        var quote = "\"Asta Lavista Baby\"";
+        
         //Answers
-     var one="Arnold Shwarznegger";
-    var two="Sylvester Stalone";
-     var three="Bruce Willis";
-     var four="Tom Hanks";
-        $("#question").val(quote); 
+        var one="Arnold Shwarznegger";
+        var two="Sylvester Stalone";
+        var three="Bruce Willis";
+        var four="Tom Hanks";
+              $("#question").html(quote); 
         $("#answerOne").val(one); 
-         $("#answerTwo").val(two); 
-         $("#answerThree").val(three); 
-         $("#answerFour").val(four); 
+        $("#answerTwo").val(two); 
+        $("#answerThree").val(three); 
+        $("#answerFour").val(four); 
         
-          return one;
+        return one;
     }
-      /*Asking a Sports Question */
+    
+    /*Asking a Sports Question */
     function askQuestionSports(){
-    var quote = "\"Baseball is 90% mental. The other half is physical\"";
-        //Answers
-     var one="Babe Ruth";
-    var two="Yogi Berra";
-     var three="Michael Jordan";
-     var four="Derek Jeter";
-        $("#question").val(quote); 
-         $("#answerOne").val(one); 
-         $("#answerTwo").val(two); 
-         $("#answerThree").val(three); 
-         $("#answerFour").val(four); 
         
-          return two;
+        //Question
+        var quote = "\"Baseball is 90% mental. The other half is physical\"";
+        
+        //Answers
+        var one="Babe Ruth";
+        var two="Yogi Berra";
+        var three="Michael Jordan";
+        var four="Derek Jeter";
+        $("#question").html(quote); 
+        $("#answerOne").val(one); 
+        $("#answerTwo").val(two); 
+        $("#answerThree").val(three); 
+        $("#answerFour").val(four); 
+        
+        return two;
     }
-      /*Asking a Music Question */
+    
+    /*Asking a Music Question */
     function askQuestionMusic(){
-    var quote = "\"Hit my baby one more time\"";
-        //Answers
-     var one="Lady Gaga";
-    var two="Nsync";
-     var three="Britney Spears";
-     var four="Hanson";
-        $("#question").val(quote); 
-         $("#answerOne").val(one); 
-         $("#answerTwo").val(two); 
-         $("#answerThree").val(three); 
-         $("#answerFour").val(four); 
         
-          return three;
-    }
-      /*Asking a History Question */
-    function askQuestionHistory(){
-    var quote = "\"I have a dream...\"";
+        //Question
+        var quote = "\"Hit me baby one more time\"";
+        
         //Answers
-    var one="Martin Luther King Jr.";
-    var two="Margaret Tatcher";
-     var three="Dali Lama";
-     var four="Itzhak Rabin";
-        $("#question").val(quote); 
-         $("#answerOne").val(one); 
-         $("#answerTwo").val(two); 
-         $("#answerThree").val(three); 
-         $("#answerFour").val(four); 
+        var one="Lady Gaga";
+        var two="Nsync";
+        var three="Britney Spears";
+        var four="Hanson";
+        $("#question").html(quote); 
+        $("#answerOne").val(one); 
+        $("#answerTwo").val(two); 
+        $("#answerThree").val(three); 
+        $("#answerFour").val(four); 
+        
+        return three;
+    }
+    
+    /*Asking a History Question */
+    function askQuestionHistory(){
+    
+        //Question
+        var quote = "\"I have a dream...\"";
+    
+        //Answers
+        var one="Martin Luther King Jr.";
+        var two="Margaret Tatcher";
+        var three="Dali Lama";
+        var four="Itzhak Rabin";
+        $("#question").html(quote); 
+        $("#answerOne").val(one); 
+        $("#answerTwo").val(two); 
+        $("#answerThree").val(three); 
+        $("#answerFour").val(four); 
         
         return one
     }
-      /*Asking a Philo Question */
-    function askQuestionPhilo(){
-    var quote = "\"I think, therefor I am\"";
-        //Answers
-    var one="Socrates";
-    var two="Aplaton";
-     var three="Decartes";
-     var four="Tom Hanks";
-        $("#question").val(quote); 
-         $("#answerOne").val(one); 
-         $("#answerTwo").val(two); 
-         $("#answerThree").val(three); 
-         $("#answerFour").val(four); 
     
-    return three;
+    /*Asking a Philo Question */
+    function askQuestionPhilo(){
+    
+        //Question
+        var quote = "\"I think, therefor I am\"";
+        
+        //Answers
+        var one="Socrates";
+        var two="Aplaton";
+        var three="Decartes";
+        var four="Tom Hanks";
+        $("#question").html(quote); 
+        $("#answerOne").val(one); 
+        $("#answerTwo").val(two); 
+        $("#answerThree").val(three); 
+        $("#answerFour").val(four); 
+    
+        return three;
     }
     
- 
+
+
+
     
 

@@ -1,5 +1,7 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html>
+
+    <!----- head ------->
     <head>
         <meta charset="UTF-8" />
         <link href="jquery-mobile/jquery.mobile-1.2.0.min.css" rel="stylesheet" type="text/css" />
@@ -10,161 +12,275 @@
         <script src="jquery-mobile/jquery.mobile-1.2.0.min.js" type="text/javascript"></script>
         <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
         <script src="js/main.js" type="text/javascript"></script>
-    </head> 
-    <body> 
-       <div data-role="page" id="home">
+    </head>
+
+    <!------ body -------->
+    <body>
+
+<!------------------------------------------- Main page -------------------------------------------->
+       <div data-role="page" id="home" class="page">
              <div data-role="header">
                 <center><img src="images/logo.png"></center>
             </div>
-            
+
             <!-- Content -->
             <div data-role="content">
                 <ul id="mainMenu">
-               <li><a href="#singleIndex" data-role="button">Single Player</a></li>        
-               <li><a href="#singleIndex" data-role="button">Multi Player</a></li> 
-               <li><a href="#leaderBoards" data-role="button">LeaderBoards</a></li> 
-                <li><a href="#myScores" data-role="button">My Scores</a></li>
+                    <li><a href="#singleIndex" data-role="button">Single Player</a></li>
+                    <li><a href="#multyIndex" data-role="button">Multi Player</a></li>
+                    <li><a href="#leaderBoards" data-role="button">LeaderBoards</a></li>
+                    <li><a href="#myScores" data-role="button">My Scores</a></li>
                 </ul>
            </div>
-             
-            
+
             <div data-role="footer" data-position="fixed" data-id="oneFooter">
-                <span class="footerText"><a href="#settings" data-role="button"  data-position-to="window" data-icon="gear" data-iconpos="notext" data-theme="c" data-inline="true" id="settingsIcon">Settings</a></span>
+                <span class="footerText">
+                    <a href="#settings" data-role="button"  data-position-to="window" data-icon="gear" data-iconpos="notext" data-theme="c" data-inline="true" id="settingsIcon">Settings</a>
+                </span>
             </div>
         </div>
-        
-        <!-- The following page demonstrates basic user interaction. -->
-        <div data-role="page" id="singleIndex" data-add-back-btn="true">
+
+
+
+
+<!--------------------------------------- Choos category page. ------------------------------------------>
+        <div data-role="page" id="singleIndex" class="page" data-add-back-btn="true">
             <div data-role="header">
                 <h1>PIck A Category</h1>
             </div>
             <div data-role="content">
-            
-         <p>
-    <a href="#singleGame" data-role="button" data-inline="true" id="Movies" onClick="background(0);category(0)">Movies</a>
-    <a href="#singleGame" data-role="button" data-inline="true" id="Sports" onClick="background(1);category(1)">Sports</a>
-</p>
-                <p>
-    <a href="#singleGame" data-role="button" data-inline="true"  id="History" onClick="background(2);category(2)">History</a>
-    <a href="#singleGame" data-role="button" data-inline="true"  id="Philosophy" onClick="background(3);category(3)">Philosophy</a>
-</p>
-                      <p>
-    <a href="#singleGame" data-role="button" data-inline="true"  id="Random" onClick="background(4);category(4)">General</a>
-    <a href="#singleGame" data-role="button" data-inline="true"  id="Music" onClick="background(5);category(5)">Music</a>
-</p>
-    </div><!-- /content -->
+
+                <table id="categories">
+                    <tr>
+                        <td>
+                            <a href="#singleGame" class="button" id="sport" onClick="background(1);category(1)">
+                                <img src="http://icons.iconarchive.com/icons/itzikgur/my-seven/48/Games-Soccer-icon.png"><br />
+                                Sports
+                            </a>
+                        </td>
+                        <td>
+                            <a href="#singleGame" class="button" id="Movies" onClick="background(0);category(0)">
+                                <img src="http://icons.iconarchive.com/icons/iconleak/atrous/72/movie-icon.png"><br />
+                                Movies
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#singleGame" class="button" id="history" onClick="background(2);category(2)">
+                                <img src="http://icons.iconarchive.com/icons/skuzigraphic/library/72/book-open-icon.png"><br />
+                                History
+                            </a>
+                        </td>
+                        <td>
+                            <a href="#singleGame" class="button" id="philosophy" onClick="background(3);category(3)">
+                                <img src="http://icons.iconarchive.com/icons/lawyerwordpress/law/72/Notary-icon.png"><br />
+                                Philosophy
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#singleGame" class="button" id="Music" onClick="background(5);category(5)">
+                                <img src="http://icons.iconarchive.com/icons/treetog/junior/72/folder-blue-music-icon.png"><br />
+                                Music
+                            </a>
+                        </td>
+                        <td>
+                            <a href="#singleGame" class="button" id="Random" onClick="background(4);category(4)">
+                                <img src="http://icons.iconarchive.com/icons/custom-icon-design/pretty-social-media/64/Picasa-icon.png"><br />
+                                Random
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+
+            </div><!-- /content -->
             <div data-role="footer" data-position="fixed"  data-id="oneFooter">
-               
+
             </div>
         </div>
-        
-        <!-- Single Game Screen Page -->
-        <div data-role="page" id="singleGame">
-        
-                <div data-role="header">
-           <p id="score"> </p>
-            
-                    	</div><!-- /header -->
-          
-                    <div data-role="content" id="singleGameContent">            
-                        <input type="text" name="text-basic" id="question" value="" stysle="background-color:white"><br>
-                        <div id="answers" >
-           
-                                <input type="button"  id="answerOne" value ="" onClick="isCorrect(this.id)">
-                                 <input type="button"  id="answerTwo" value="" onClick="isCorrect(this.id)">        
-                             <input type="button"   id="answerThree"  value="" onClick="isCorrect(this.id)">
-                                 <input type="button"   id="answerFour" value="" onClick="isCorrect(this.id)">
-                   
-                              
-                             
-                             
-                      
-                        </div>
-                      
-                        <!-- Time -->
-                        <p id="time">
-                            Time
-                        </p>
-                        </div>
-                         <div data-role="footer" data-position="fixed" data-id="oneFooter">
+
+
+
+
+<!------------------------------------- Single Game Screen Page ----------------------------------------->
+        <div data-role="page" id="singleGame" class="page">
+
+            <div data-role="header">
+                <p id="score"> </p>
+
+            </div><!-- /header -->
+
+            <div data-role="content" id="singleGameContent">
+                <h1 name="text-basic" id="question"></h1>
+
+                <div id="answers">
+
+                    <input type="button"  id="answerOne" value ="" onClick="isCorrect(this.id)">
+                    <input type="button"  id="answerTwo" value="" onClick="isCorrect(this.id)">
+                    <input type="button"  id="answerThree" value="" onClick="isCorrect(this.id)">
+                    <input type="button"  id="answerFour" value="" onClick="isCorrect(this.id)">
+                </div>
+
+                <!-- Time -->
+                <p id="time"> Time </p>
+                <span id="timer" font-size="18pt" color="blue"; background="black"></span>
+ 
+            </div>
+
+            <div data-role="footer" data-position="fixed" data-id="oneFooter">
                 <span class="footerText"><a href="#settings" data-role="button" data-icon="gear" data-iconpos="notext" data-theme="c" data-inline="true" id="settingsIcon">Settings</a></span>
-            
-
+            </div>
         </div>
-             </div>
-     
-        
-        <!-- Single Game End Screen Page -->
-        <div data-role="page" id="singleGameEnd">
 
-	<div data-role="content">
-		
-	</div><!-- /content -->
 
-	<div data-role="footer">
-		<h4>Page Footer</h4>
-	</div><!-- /footer -->
-</div><!-- /page -->
-        
-        
-           <!-- Single Game View Quotes page -->
-        <div data-role="page" id="singleEndQuotes">
 
-	<div data-role="header">
-		<h1>Page Title</h1>
-	</div><!-- /header -->
 
-	<div data-role="content">
-		<p>Page content goes here.</p>
-	</div><!-- /content -->
+<!------------------------------------------ Single Game End Screen Page ---------------------------------->
+        <div data-role="page" id="singleGameEnd" class="page">
 
-	 <div data-role="footer" data-position="fixed" data-id="oneFooter">
+	        <div data-role="content">
+                <div id="showScore">
+                    <h3> Score: <h3>
+                </div>
+
+	        </div><!-- /content -->
+
+	        <div data-role="footer">
+		        <h4>Page Footer</h4>
+	        </div><!-- /footer -->
+        </div><!-- /page -->
+
+
+
+
+<!------------------------------------------- Single Game View Quotes page --------------------------------->
+        <div data-role="page" id="singleEndQuotes" class="page">
+
+	        <div data-role="header">
+		        <h1>Page Title</h1>
+            </div><!-- /header -->
+
+	        <div data-role="content">
+		        <p>Page content goes here.</p>
+	        </div><!-- /content -->
+
+	        <div data-role="footer" data-position="fixed" data-id="oneFooter">
                 <span class="footerText"><a href="#settings" data-role="button" data-icon="gear" data-iconpos="notext" data-theme="c" data-inline="true" id="settingsIcon">Settings</a></span>
             </div><!-- /footer -->
-</div><!-- /page -->
-        
-        
-           <!-- Settings Page -->
-        <div data-role="page" id="settingsPage">
-    	<div data-role="popup" id="settings" class="ui-content" data-overlay-theme="a">
-    <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-    <p>I have a close button at the top right corner with simple HTML markup.</p>
-            </div></div>
-        
-          
-           <!-- LeaderBoards Page -->
-        <div data-role="page" id="leaderBoards">
+        </div><!-- /page -->
 
-	<div data-role="header">
-		<h1>Page Title</h1>
-	</div><!-- /header -->
 
-	<div data-role="content">
-		<p>Page content goes here.</p>
-	</div><!-- /content -->
 
-	<div data-role="footer">
-		<h4>Page Footer</h4>
-	</div><!-- /footer -->
-</div><!-- /page -->
-        
-                  
-           <!-- My Scores Page -->
-        <div data-role="page" id="myScores">
+<!----------------------------------------------- Multi Player Pre Game page ----------------------------------->
+        <div data-role="page" id="multyIndex" class="page">
 
-	<div data-role="header">
-		<h1>Page Title</h1>
-	</div><!-- /header -->
+            <div data-role="header">
+                
 
-	<div data-role="content">
-		<p>Page content goes here.</p>
-	</div><!-- /content -->
+            </div><!-- /header -->
 
-	<div data-role="footer">
-		<h4>Page Footer</h4>
-	</div><!-- /footer -->
-</div><!-- /page -->
-        
-        
+            <div data-role="content" id="multyIndexContent">
+                
+
+                <div id="yourTurn">
+                    <h4>active games:<h4>
+                    
+                    <!-- list of active games -->
+                    <ul data-role="listview" data-inset="true" id="activeGames">
+                        <li><a href="#"><img src="http://icons.iconarchive.com/icons/double-j-design/origami-colored-pencil/48/blue-user-icon.png"></a></li>
+                        <li><a href="#"><img src="http://icons.iconarchive.com/icons/double-j-design/origami-colored-pencil/48/blue-user-icon.png"></a></li>
+                        <li><a href="#"><img src="http://icons.iconarchive.com/icons/double-j-design/origami-colored-pencil/48/blue-user-icon.png"></a></li>
+                        <li><a href="#"><img src="http://icons.iconarchive.com/icons/double-j-design/origami-colored-pencil/48/blue-user-icon.png"></a></li>
+                        <li><a href="#"><img src="http://icons.iconarchive.com/icons/double-j-design/origami-colored-pencil/48/blue-user-icon.png"></a></li>
+                    </ul>
+
+                </div>
+                
+                <p>
+                    <a href="#" class="button" data-role="button" data-inline="true">invite a frinde</a>
+                    <a href="#" class="button" data-role="button" data-inline="true">random</a>
+                </p>
+
+            </div>
+
+            <div data-role="footer" data-position="fixed" data-id="oneFooter">
+                <span class="footerText"><a href="#settings" data-role="button" data-icon="gear" data-iconpos="notext" data-theme="c" data-inline="true" id="settingsIcon">Settings</a></span>
+            </div>
+        </div>        
+
+
+
+
+<!--------------------------------------------- Settings Page --------------------------------------------->
+        <div data-role="page" id="settingsPage" class="page">
+    	    <div data-role="popup" id="settings" class="ui-content" data-overlay-theme="a">
+                <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+                <p> I have a close button at the top right corner with simple HTML markup. </p>
+            </div>
+        </div>
+
+
+
+
+<!-------------------------------------------- LeaderBoards Page ---------------------------------------->
+        <div data-role="page" id="leaderBoards" class="page">
+
+	        <div data-role="header">
+		        <h1>Page Title</h1>
+	        </div><!-- /header -->
+
+	        <div data-role="content">
+		        <ol data-role="listview">
+                    <li>jon</li>
+                    <li>idan</li>
+                    <li>yoav</li>
+                    <li>leeron</li>
+                    <li>tal</li>
+                    <li>lia</li>
+                    <li>jonatan</li>
+                    <li>yoav</li>
+                    <li>anat</li>
+                    <li>lior</li>
+                </ol>
+	        </div><!-- /content -->
+
+	        <div data-role="footer">
+		        <h4>Page Footer</h4>
+	        </div><!-- /footer -->
+        </div><!-- /page -->
+
+
+
+
+<!---------------------------------------------- My Scores Page ----------------------------------------->
+        <div data-role="page" id="myScores" class="page">
+
+	        <div data-role="header">
+		        <h1>Page Title</h1>
+	        </div><!-- /header -->
+
+	        <div data-role="content">
+		        <ol data-role="listview">
+                    <li>jon</li>
+                    <li>idan</li>
+                    <li>yoav</li>
+                    <li>leeron</li>
+                    <li>tal</li>
+                    <li>lia</li>
+                    <li>jonatan</li>
+                    <li>yoav</li>
+                    <li>anat</li>
+                    <li>lior</li>
+                </ol>
+	        </div><!-- /content -->
+
+	        <div data-role="footer">
+		        <h4>Page Footer</h4>
+	        </div><!-- /footer -->
+        </div><!-- /page -->
+
+
     </body>
-    </html>
+</html>
