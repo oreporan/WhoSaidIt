@@ -14,23 +14,49 @@ function onDeviceReady() {
 }
 
     /*For each question - Which button did he answer? */
-function isCorrect(userAnswer){
+function isCorrect(userAnswer,userAnswerText){
     var correct =  correctAnswer; 
-    var user = document.getElementById(userAnswer).value;
+   var user =  $('#'+userAnswerText).text();
     if(user == correct){
-        $('#'+userAnswer).css("background-Color","green");
+        $('#'+userAnswer).css("background","#33CC00");
            
         //Update points
         points++;
             
     } else {
-        $('#'+userAnswer).css("background-Color","red");
+        $('#'+userAnswer).css("background","red");
     }
     
-    //Ask next Question
-    category(categoryChosen);
+    //Display Score
+    score();
+    
+    //Reset button colors
+   nextQuestion(userAnswer);
+    
+  
             
 }
+
+//Resets background for buttons, enables buttons and advances to next question
+function nextQuestion(user){
+    
+	//Disable all answers
+       $('a.answerButton').addClass('ui-disabled');
+ setTimeout(function (){
+              $('#'+user).css('background','');
+              
+              //Enable buttons
+     		$('a.answerButton').removeClass('ui-disabled');
+			clicked = false; 
+              
+                //Ask next Question
+				category(categoryChosen+1);
+				
+
+         }, 1000);
+	
+	
+	}
 
 function timer() {
     var seconds_left = 10;
@@ -108,12 +134,8 @@ function category(category){
     //Category chosen
     categoryChosen = category;
   
-    //Display Score
-    score();
     
-      //TODO: Reset Button Background Colors 
- 
-    //To change Background color
+    
     switch(categoryChosen){
           
         case movies:
@@ -150,7 +172,6 @@ function category(category){
      
 /*Asking a Movie Question */
 function askQuestionMovies(){
-    
     //Question
     var quote = "\"Asta Lavista Baby\"";
      
@@ -161,13 +182,14 @@ function askQuestionMovies(){
     var two="Sylvester Stalone";
     var three="Bruce Willis";
     var four="Tom Hanks";
-
-    $("#answerOne").val(one); 
-    $("#answerTwo").val(two); 
-    $("#answerThree").val(three); 
-    $("#answerFour").val(four);
+	
+	$("#one").html(one); 
+	$("#two").html(two); 
+	$("#three").html(three); 
+	$("#four").html(four); 
+	
     
-    timer();
+
         
     return one;
 }
@@ -185,11 +207,10 @@ function askQuestionRandom(){
     var four="Tom Hanks";
     
     $("#question").html(quote); 
-    $("#answerOne").val(one); 
-    $("#answerTwo").val(two); 
-    $("#answerThree").val(three); 
-    $("#answerFour").val(four); 
-    
+	$("#one").html(one); 
+	$("#two").html(two); 
+	$("#three").html(three); 
+	$("#four").html(four); 
     return one;
 }
     
@@ -205,11 +226,10 @@ function askQuestionRandom(){
         var three="Michael Jordan";
         var four="Derek Jeter";
         $("#question").html(quote); 
-        $("#answerOne").val(one); 
-        $("#answerTwo").val(two); 
-        $("#answerThree").val(three); 
-        $("#answerFour").val(four); 
-        
+    	$("#one").html(one); 
+	$("#two").html(two); 
+	$("#three").html(three); 
+	$("#four").html(four); 
         return two;
     }
     
@@ -225,11 +245,11 @@ function askQuestionRandom(){
         var three="Britney Spears";
         var four="Hanson";
         $("#question").html(quote); 
-        $("#answerOne").val(one); 
-        $("#answerTwo").val(two); 
-        $("#answerThree").val(three); 
-        $("#answerFour").val(four); 
-        
+        	$("#one").html(one); 
+	$("#two").html(two); 
+	$("#three").html(three); 
+	$("#four").html(four); 
+          
         return three;
     }
     
@@ -245,11 +265,11 @@ function askQuestionRandom(){
         var three="Dali Lama";
         var four="Itzhak Rabin";
         $("#question").html(quote); 
-        $("#answerOne").val(one); 
-        $("#answerTwo").val(two); 
-        $("#answerThree").val(three); 
-        $("#answerFour").val(four); 
-        
+     	$("#one").html(one); 
+	$("#two").html(two); 
+	$("#three").html(three); 
+	$("#four").html(four); 
+
         return one
     }
     
@@ -265,11 +285,10 @@ function askQuestionRandom(){
         var three="Decartes";
         var four="Tom Hanks";
         $("#question").html(quote); 
-        $("#answerOne").val(one); 
-        $("#answerTwo").val(two); 
-        $("#answerThree").val(three); 
-        $("#answerFour").val(four); 
-    
+       	$("#one").html(one); 
+	$("#two").html(two); 
+	$("#three").html(three); 
+	$("#four").html(four); 
         return three;
     }
     

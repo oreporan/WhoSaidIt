@@ -102,8 +102,9 @@ a
 
 #homeContent
 {
+background-image:url('../images/logo.png');
     margin-top:1.5cm;
-	height:400px;
+    height:400px;
   
 }
 #logo{
@@ -124,8 +125,8 @@ background:black
     from { -ms-transform: rotate(0deg); }
     to { -ms-transform: rotate(360deg); }
 }
-#mainLogo
-{
+
+#logoBackground    {
     -webkit-animation-name: spin; 
     -webkit-animation-duration: 3000ms;
     -webkit-animation-iteration-count: infinite; 
@@ -138,8 +139,6 @@ background:black
     -ms-animation-duration: 3000ms;
     -ms-animation-iteration-count: infinite; 
     -ms-animation-timing-function: linear;
-
-
 }
 
 

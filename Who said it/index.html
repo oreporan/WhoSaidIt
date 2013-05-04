@@ -28,7 +28,7 @@
 
 <!------------------------------------------- Main page -------------------------------------------->
        <div data-role="page" id="home" class="page">
-    	   <div data-role="header">
+           <div data-role="header">
             </div>
             <!-- Content -->
             <div data-role="content" id="homeContent">
@@ -54,13 +54,13 @@
                 <table id="categories">
                     <tr>
                         <td>
-                            <a href="#singleGame" class="button" id="sport" onClick="background(1);category(1)">
+                            <a href="#singleGame" class="button" id="sport" onClick="background(1);category(1);timer()">
                                 <img src="http://icons.iconarchive.com/icons/itzikgur/my-seven/48/Games-Soccer-icon.png"><br />
                                 Sports
                             </a>
                         </td>
                         <td>
-                            <a href="#singleGame" class="button" id="Movies" onClick="background(0);category(0)">
+                            <a href="#singleGame" class="button" id="Movies" onClick="background(0);category(0);timer()">
                                 <img src="http://icons.iconarchive.com/icons/iconleak/atrous/72/movie-icon.png"><br />
                                 Movies
                             </a>
@@ -68,13 +68,13 @@
                     </tr>
                     <tr>
                         <td>
-                            <a href="#singleGame" class="button" id="history" onClick="background(2);category(2)">
+                            <a href="#singleGame" class="button" id="history" onClick="background(2);category(2);timer()">
                                 <img src="http://icons.iconarchive.com/icons/skuzigraphic/library/72/book-open-icon.png"><br />
                                 History
                             </a>
                         </td>
                         <td>
-                            <a href="#singleGame" class="button" id="philosophy" onClick="background(3);category(3)">
+                            <a href="#singleGame" class="button" id="philosophy" onClick="background(3);category(3);timer()">
                                 <img src="http://icons.iconarchive.com/icons/lawyerwordpress/law/72/Notary-icon.png"><br />
                                 Philosophy
                             </a>
@@ -82,13 +82,13 @@
                     </tr>
                     <tr>
                         <td>
-                            <a href="#singleGame" class="button" id="Music" onClick="background(5);category(5)">
+                            <a href="#singleGame" class="button" id="Music" onClick="background(5);category(5);timer()">
                                 <img src="http://icons.iconarchive.com/icons/treetog/junior/72/folder-blue-music-icon.png"><br />
                                 Music
                             </a>
                         </td>
                         <td>
-                            <a href="#singleGame" class="button" id="Random" onClick="background(4);category(4)">
+                            <a href="#singleGame" class="button" id="Random" onClick="background(4);category(4);timer()">
                                 <img src="http://icons.iconarchive.com/icons/custom-icon-design/pretty-social-media/64/Picasa-icon.png"><br />
                                 Random
                             </a>
@@ -117,17 +117,16 @@
                 <h1 name="text-basic" id="question"></h1>
 
                 <div id="answers">
-
-                    <input type="button"  id="answerOne" value ="" onClick="isCorrect(this.id)">
-                    <input type="button"  id="answerTwo" value="" onClick="isCorrect(this.id)">
-                    <input type="button"  id="answerThree" value="" onClick="isCorrect(this.id)">
-                    <input type="button"  id="answerFour" value="" onClick="isCorrect(this.id)">
+                    <a class="answerButton" data-role="button"  id="answerOne" onClick="isCorrect(this.id,'one')"><span id="one"></span></a>
+                    <a class="answerButton" data-role="button"  id="answerTwo" onClick="isCorrect(this.id,'two')"><span id="two"></span></a>
+                    <a class="answerButton" data-role="button"  id="answerThree" onClick="isCorrect(this.id,'three')"><span id="three"></span></a>
+                    <a class="answerButton" data-role="button"  id="answerFour"  onClick="isCorrect(this.id,'four')"><span id="four"></span></a>
                 </div>
 
                 <!-- Time -->
                 <div id="time_div">
                     
-                    <p id="timer" text-align="inline"> </p>
+                    <p id="timer"> </p>
                 </div>
             </div>
 
