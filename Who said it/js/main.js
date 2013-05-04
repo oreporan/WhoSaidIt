@@ -23,13 +23,12 @@ function isCorrect(userAnswer){
         //Update points
         points++;
             
-        //Ask next Question
-        category(categoryChosen);
-        
     } else {
         $('#'+userAnswer).css("background-Color","red");
-        category(categoryChosen);
-    }       
+    }
+    
+    //Ask next Question
+    category(categoryChosen);
             
 }    
 
@@ -47,22 +46,22 @@ function background(num){
     switch(num){
           
         case 0:
-            $("#singleGameContent").css({'background-image':'url(images/movies.jpg)','background-size':'100%'});           
+            $("#singleGameContent").css({'background-image':'url(images/movies.png)','background-size':'100%'});           
               
             break;
             
         case 1:
-            $("#singleGameContent").css('background-image', 'url(images/sports.jpg)');
+            $("#singleGameContent").css('background-image', 'url(images/sports.png)');
     
             break;
             
         case 2:
-            $("#singleGameContent").css('background-image', 'url(images/history.jpg)');
+            $("#singleGameContent").css('background-image', 'url(images/history.png)');
        
             break;
             
         case 3:
-            $("#singleGameContent").css('background-image', 'url(images/philo.jpg)');
+            $("#singleGameContent").css('background-image', 'url(images/philo.png)');
 
             break;
             
@@ -132,47 +131,48 @@ function category(category){
     }
 }
      
-    /*Asking a Movie Question */
-    function askQuestionMovies(){
+/*Asking a Movie Question */
+function askQuestionMovies(){
     
-        //Question
-        var quote = "\"Asta Lavista Baby\"";
-       // $("#question").val(quote); 
-              $("#question").html(quote); 
+    //Question
+    var quote = "\"Asta Lavista Baby\"";
+     
+    $("#question").html(quote); 
 
-        //Answers        
-        var one="Arnold Shwarznegger";
-        var two="Sylvester Stalone";
-        var three="Bruce Willis";
-        var four="Tom Hanks";
+    //Answers        
+    var one="Arnold Shwarznegger";
+    var two="Sylvester Stalone";
+    var three="Bruce Willis";
+    var four="Tom Hanks";
 
-        $("#answerOne").val(one); 
-        $("#answerTwo").val(two); 
-        $("#answerThree").val(three); 
-        $("#answerFour").val(four); 
+    $("#answerOne").val(one); 
+    $("#answerTwo").val(two); 
+    $("#answerThree").val(three); 
+    $("#answerFour").val(four); 
         
-        return one;
-    }
+    return one;
+}
     
-    /*Asking a General Question */
-    function askQuestionRandom(){
+/*Asking a General Question */
+function askQuestionRandom(){
     
-        //Question
-        var quote = "\"Asta Lavista Baby\"";
+    //Question
+    var quote = "\"Asta Lavista Baby\"";
         
-        //Answers
-        var one="Arnold Shwarznegger";
-        var two="Sylvester Stalone";
-        var three="Bruce Willis";
-        var four="Tom Hanks";
-              $("#question").html(quote); 
-        $("#answerOne").val(one); 
-        $("#answerTwo").val(two); 
-        $("#answerThree").val(three); 
-        $("#answerFour").val(four); 
-        
-        return one;
-    }
+    //Answers
+    var one="Arnold Shwarznegger";
+    var two="Sylvester Stalone";
+    var three="Bruce Willis";
+    var four="Tom Hanks";
+    
+    $("#question").html(quote); 
+    $("#answerOne").val(one); 
+    $("#answerTwo").val(two); 
+    $("#answerThree").val(three); 
+    $("#answerFour").val(four); 
+    
+    return one;
+}
     
     /*Asking a Sports Question */
     function askQuestionSports(){
@@ -253,6 +253,16 @@ function category(category){
     
         return three;
     }
+    
+    //Redirects from Logo to main page
+    function redirect(){
+   window.location = $('a').attr('href');
+    $("#homeContent").css({'background-image':'url(images/logo.png)','background-repeat':'no-repeat'});
+    $("#singleIndexContent").css({'background-image':'url(images/logo.png)','background-repeat':'no-repeat'});
+
+}
+
+setTimeout(redirect, 2000);
     
 
 

@@ -16,15 +16,22 @@
 
     <!------ body -------->
     <body>
+  <!------------------------------------------- Logo page -------------------------------------------->
+       <div data-role="page" id="logo" class="page">
+
+            <!-- Content -->
+            <div id="logoBackground" data-role="content">
+             <img src="images/logo.png">
+             <a href="#home" id="toHome" data-transition="slide"></a>
+           </div>
+        </div>
 
 <!------------------------------------------- Main page -------------------------------------------->
        <div data-role="page" id="home" class="page">
-             <div data-role="header">
-                <center><img src="images/logo.png"></center>
-            </div>
+
 
             <!-- Content -->
-            <div data-role="content">
+            <div data-role="content" id="homeContent">
                 <ul id="mainMenu">
                     <li><a href="#singleIndex" data-role="button">Single Player</a></li>
                     <li><a href="#multyIndex" data-role="button">Multi Player</a></li>
@@ -48,7 +55,7 @@
             <div data-role="header">
                 <h1>PIck A Category</h1>
             </div>
-            <div data-role="content">
+            <div data-role="content" id="singleIndexContent">
 
                 <table id="categories">
                     <tr>
@@ -140,7 +147,7 @@
 <!------------------------------------------ Single Game End Screen Page ---------------------------------->
         <div data-role="page" id="singleGameEnd" class="page">
 
-	        <div data-role="content">
+            <div data-role="content">
                 <div id="showScore">
                     <h3> Score: <h3>
                 </div>

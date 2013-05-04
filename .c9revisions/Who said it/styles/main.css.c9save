@@ -18,3 +18,21 @@
 {"ts":1367596533373,"patch":[[{"diffs":[[0,"ter;\n}\n\n"],[1,".right\n{\n    text-align: left;\n}\n\n"],[0,"\n\n\n\n\n"]],"start1":860,"start2":860,"length1":13,"length2":47}]],"length":907,"saved":false}
 {"ts":1367596615645,"patch":[[{"diffs":[[0,"t\n{\n    "],[-1,"text-align: left"],[1,"margin-right: 4px"],[0,";\n}\n\n\n\n\n"]],"start1":873,"start2":873,"length1":32,"length2":33}]],"length":908,"saved":false}
 {"ts":1367605024104,"patch":[[{"diffs":[[0,"one;\n}\n\n"],[1,"a\n{\n    text-decoration:none;\n}\n\n"],[0,"#mainMen"]],"start1":523,"start2":523,"length1":16,"length2":49}]],"length":941,"saved":false}
+{"contributors":[],"silentsave":false,"ts":1367665699842,"patch":[[{"diffs":[[0,"right: 4px;\n"],[1,"    background-color:black;\n"],[0,"}\n\n.ui-foote"]],"start1":40,"start2":40,"length1":24,"length2":52}]],"length":969,"saved":false}
+{"ts":1367665725190,"patch":[[{"diffs":[[0,"px;\n"],[-1,"    background-color:black;\n"],[0,"}\n\n."]],"start1":48,"start2":48,"length1":36,"length2":8}]],"length":941,"saved":false}
+{"ts":1367665807760,"patch":[[{"diffs":[[0,"4px;\n}\n\n"],[1,"#logo\n{\nbackground-color:black;\n}\n"],[0,"\n\n\n\n\n"]],"start1":928,"start2":928,"length1":13,"length2":47}]],"length":975,"saved":false}
+{"ts":1367666119448,"patch":[[{"diffs":[[0,"}\n\n#"],[-1,"logo"],[1,"home"],[0,"\n{\nb"]],"start1":933,"start2":933,"length1":12,"length2":12}]],"length":975,"saved":false}
+{"ts":1367666165669,"patch":[[{"diffs":[[0,"ound"],[-1,"-color"],[0,":bla"]],"start1":950,"start2":950,"length1":14,"length2":8}]],"length":969,"saved":false}
+{"ts":1367666357982,"patch":[[{"diffs":[[0,":black;\n"],[1,"background-image:url(images/history.png)\n"],[0,"}\n\n\n\n\n\n"]],"start1":954,"start2":954,"length1":15,"length2":56}]],"length":1010,"saved":false}
+{"ts":1367666381777,"patch":[[{"diffs":[[0,"ges/"],[-1,"history"],[1,"logo"],[0,".png"]],"start1":986,"start2":986,"length1":15,"length2":12}]],"length":1007,"saved":false}
+{"contributors":[],"silentsave":false,"ts":1367666421621,"patch":[[{"diffs":[[0,"ogo.png)"],[1,";"],[0,"\n}\n\n\n\n\n\n"]],"start1":991,"start2":991,"length1":16,"length2":17}]],"length":1008,"saved":false}
+{"ts":1367666426445,"patch":[[{"diffs":[[0,"age:url("],[1,"'"],[0,"images/l"]],"start1":975,"start2":975,"length1":16,"length2":17},{"diffs":[[0,"logo.png"],[1,"'"],[0,");\n}\n\n\n\n"]],"start1":991,"start2":991,"length1":16,"length2":17}]],"length":1010,"saved":false}
+{"ts":1367666437656,"patch":[[{"diffs":[[0,"e\n{\n"],[-1,"background:black;\n"],[0,"back"]],"start1":940,"start2":940,"length1":26,"length2":8}]],"length":992,"saved":false}
+{"contributors":[],"silentsave":false,"ts":1367667151542,"patch":[[{"diffs":[[0,"}\n\n#home"],[1,"Content"],[0,"\n{\nbackg"]],"start1":933,"start2":933,"length1":16,"length2":23}]],"length":999,"saved":false}
+{"ts":1367667181931,"patch":[[{"diffs":[[0,"ound"],[-1,"-image:url('images/logo.png')"],[1,":blue"],[0,";\n}\n"]],"start1":957,"start2":957,"length1":37,"length2":13}]],"length":975,"saved":false}
+{"ts":1367667196663,"patch":[[{"diffs":[[0,"}\n\n#home"],[-1,"Content"],[0,"\n{\nbackg"]],"start1":933,"start2":933,"length1":23,"length2":16}]],"length":968,"saved":false}
+{"ts":1367667250787,"patch":[[{"diffs":[[0,"ound"],[-1,":blue"],[1,"-image:url('/images/logo.png')"],[0,";\n}\n"]],"start1":950,"start2":950,"length1":13,"length2":38}]],"length":993,"saved":false}
+{"ts":1367667258891,"patch":[[{"diffs":[[0,"ge:url('"],[-1,"/"],[0,"images/l"]],"start1":958,"start2":958,"length1":17,"length2":16}]],"length":992,"saved":false}
+{"ts":1367667271465,"patch":[[{"diffs":[[0,"ges/"],[-1,"logo"],[1,"history"],[0,".png"]],"start1":969,"start2":969,"length1":12,"length2":15}]],"length":995,"saved":false}
+{"ts":1367667383849,"patch":[[{"diffs":[[0,"\n}\n\n"],[-1,"#home\n{\nbackground-image:url('images/history.png');\n}\n"],[0,"\n\n\n\n"]],"start1":932,"start2":932,"length1":62,"length2":8}]],"length":941,"saved":false}
+{"ts":1367667430560,"patch":[[{"diffs":[[0," 4px;\n}\n"],[1,"#home\n{\n    background:black;\n}"],[0,"\n\n\n\n\n\n"]],"start1":927,"start2":927,"length1":14,"length2":45}]],"length":972,"saved":false}
